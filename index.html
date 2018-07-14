@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+    <div ng-controller="cat">
+        First Name<input ng-model="fname" type="text">
+        Last Name<input ng-model="lname" type="text">
+        <input ng-click="give()" value="submit" ng-model="sname" type="submit">
+        <label ng-bind="fullname">Full Name:</label>
+    </div>
+    <script>
+    var app=angular.module("myApp",[]);
+    app.controller("cat",function($scope)
+    {
+       $scope.fname='';
+       $scope.lname='';
+       $scope.fullname=''; 
+       $scope.give=function()
+       {
+        $scope.fullname=$scope.fname+"  "+""+$scope.lname;
+       };
+
+    });
+    </script>
+</body>
